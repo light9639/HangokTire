@@ -1,0 +1,1760 @@
+.container {
+    .headline {
+        font-weight: 600;
+        line-height: 1.24;
+        letter-spacing: -0.03em;
+        font-family: "Hankook",
+            sans-serif;
+        font-size: 48px;
+    }
+
+    .sc-visual {
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: visible;
+        height: calc(100vh);
+        min-height: 560px;
+        max-height: 1000px;
+        padding-top: 110px;
+
+        .content {
+            height: 100%;
+            overflow: hidden;
+
+            .swiper {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .swiper-slide {
+                flex-shrink: 0;
+                position: relative;
+                height: 100%;
+
+                video {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .condition-panel {
+                display: flex;
+                align-items: center;
+                position: absolute;
+                z-index: 1;
+                bottom: 40px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                padding: 10px 30px 10px 10px;
+                border-radius: 40px;
+                min-width: 800px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+
+                .switch-wrap {
+                    position: relative;
+                    white-space: nowrap;
+                    padding: 6px 23px 6px 22px;
+                    border-radius: 30px;
+                    background-color: #000;
+                    display: flex;
+                    align-items: center;
+
+                    .switch {
+                        position: relative;
+
+                        &.on {
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 48px;
+                            height: 48px;
+                            opacity: .4;
+                            background-size: 100%;
+                        }
+
+                        &:first-child::after {
+                            background-image: url(../images/c_pc.svg);
+                        }
+
+                        &:last-child {
+                            margin-left: 10px;
+                            padding-left: 12px;
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                width: 1px;
+                                height: 26px;
+                                left: 0;
+                                top: 50%;
+                                transform: translate(0, -50%);
+                                opacity: .2;
+                                background-color: #f7f7f7;
+                            }
+
+                            &::after {
+                                background-image: url(../images/c_truck.svg);
+                            }
+                        }
+
+                        &:hover {
+                            .tooltip {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                        .tooltip {
+                            visibility: hidden;
+                            opacity: 0;
+                            position: absolute;
+                            top: -23px;
+                            right: 24px;
+                            transform: translate(50%, -100%);
+                            font-size: 11px;
+                            color: #666;
+                            display: block;
+                            white-space: nowrap;
+                            background-color: #fff;
+                            padding: 3px 9px 4px;
+                            letter-spacing: -0.006rem;
+                            transition: opacity .3s;
+
+                            &::before {
+                                display: block;
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                border-left: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                border-top: 4px solid #f7f7f7;
+                                position: absolute;
+                                bottom: -4px;
+                                left: 50%;
+                                transform: translate(-50%);
+                            }
+                        }
+                    }
+                }
+
+                .cond-wrap {
+                    display: none;
+
+                    &.on {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .cond-mobile,
+                    .cond {
+                        position: relative;
+                        padding-left: 72px;
+                        padding-right: 50px;
+                        cursor: pointer;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 1px;
+                            height: 44px;
+                            left: 0;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                            background-color: rgba(0, 0, 0, 0.15);
+                        }
+
+                        &:first-child::before {
+                            content: none;
+                        }
+
+                        small {
+                            display: inline-block;
+                            color: #666;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+
+                        .title {
+                            position: relative;
+                            display: block;
+                            white-space: nowrap;
+                            font-size: 24px;
+                            font-weight: 600;
+
+                            &::after {
+                                content: "";
+                                display: inline-block;
+                                position: relative;
+                                vertical-align: middle;
+                                width: 32px;
+                                height: 32px;
+                                margin-left: 12px;
+                                background-image: url("../images/w_arrow.svg");
+                                border-radius: 50%;
+                                background-color: rgba(0, 0, 0, .05);
+                                background-repeat: no-repeat;
+                                background-size: 16px 16px;
+                                background-position: center;
+                                transition: background-color .3s,
+                                    transform .3s;
+                            }
+                        }
+                    }
+
+                    .cond-mobile {
+                        display: none;
+                    }
+                }
+
+                .link {
+                    display: none;
+                }
+            }
+
+            .swiper-pagination {
+                position: absolute;
+                text-align: center;
+                transition: .3s opacity;
+                transform: translate3d(0, 0, 0);
+                z-index: 10;
+                width: 100%;
+                max-width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 150px;
+
+                .swiper-pagination-bullet {
+                    background-color: #fff;
+                    opacity: 0.2;
+                }
+
+                .swiper-pagination-bullet-active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .sc-widgetboard {
+        padding-top: 22px;
+
+        .inner {
+            position: relative;
+        }
+
+        .grid-area {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 16px;
+            padding: 56px 0;
+        }
+
+        .item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            &:hover {
+                .bg {
+                    transform: scale(1.1);
+                }
+
+                .content {
+
+                    .link-more::after {
+                        transform: translate(6px);
+                    }
+                }
+            }
+
+            .bg {
+                height: 100%;
+                transition: all .6s;
+            }
+
+            .content {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                padding: 28px 28px;
+                z-index: 2;
+
+                .desc {
+                    font-size: 18px;
+                    line-height: 1.44;
+                    display: block;
+                    color: #fff;
+                    margin-top: 10px;
+                    letter-spacing: -0.02em;
+                    font-weight: 300;
+                }
+
+                .link-more {
+                    padding-top: 20px;
+                    font-size: 16px;
+                    display: inline-block;
+                    font-weight: 500;
+                    font-family: "HankookMain";
+                    color: #fff;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 12px;
+                        background-image: url("../images/w_arrow.svg");
+                        border-radius: 50%;
+                        background-color: #fff;
+                        background-repeat: no-repeat;
+                        background-size: 16px 16px;
+                        background-position: center;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+                height: 368px;
+                background-color: #000;
+
+                .content {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    padding: 28px;
+                    z-index: 2;
+
+                    strong {
+                        color: #fff;
+                        font-size: 40px;
+                        line-height: 1.3;
+                        font-family: "Hankook",
+                            sans-serif;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                grid-column: 3/5;
+                grid-row: 1/3;
+                background-color: aliceblue;
+            }
+
+            &:nth-child(3) {
+                grid-column: 2/3;
+                grid-row: 1;
+                background-color: beige;
+            }
+
+            &:nth-child(4) {
+                grid-column: 1/3;
+                grid-row: 2;
+                background-color: lightpink;
+            }
+
+            &:nth-child(5) {
+                grid-column: 1;
+                grid-row: 3;
+                background-color: lightpink;
+            }
+
+            &:nth-child(6) {
+                grid-column: 2;
+                grid-row: 3;
+                background-color: lightpink;
+            }
+
+            &:nth-child(7) {
+                grid-column: 3;
+                grid-row: 3;
+                background-color: lightpink;
+            }
+
+            &:nth-child(8) {
+                grid-column: 4;
+                grid-row: 3;
+                background-color: lightpink;
+            }
+        }
+    }
+
+    .sc-brands {
+        padding-top: 88px;
+
+        .headline {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        &>.swiper {
+            position: relative;
+
+            .swiper-slide {
+                &:hover {
+                    .more::after {
+                        transform: translate(6px);
+                    }
+                }
+
+                .content {
+                    position: absolute;
+                    width: auto;
+                    left: 50%;
+                    bottom: 52px;
+                    transform: translate(-50%, 0);
+                    text-align: center;
+
+                    img {
+                        margin-bottom: 20px;
+                        width: 100%;
+                    }
+
+                    span {
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: 5px 0;
+                        font-family: "HankookMain";
+                        position: relative;
+                        color: #fff;
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            position: relative;
+                            vertical-align: middle;
+                            width: 32px;
+                            height: 32px;
+                            margin-left: 12px;
+                            background-image: url("../images/w_arrow.svg");
+                            border-radius: 50%;
+                            background-color: #fff;
+                            background-repeat: no-repeat;
+                            background-size: 16px 16px;
+                            background-position: center;
+                            transition: background-color .3s,
+                                transform .3s;
+                        }
+                    }
+                }
+            }
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                z-index: 10;
+                width: 52px;
+                height: 52px;
+                cursor: pointer;
+
+                &.swiper-button-disabled::after {
+                    opacity: 0.4;
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: #fff;
+                    border-radius: 50%;
+                    transition: transform .26s;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-size: contain;
+                }
+
+                &:hover {
+                    &::before {
+                        transform: scale(0.8);
+                    }
+                }
+
+                &.btn-prev {
+                    left: 40px;
+
+                    &::after {
+                        background-image: url("../images/w_prev.svg");
+                    }
+                }
+
+                &.btn-next {
+                    right: 40px;
+
+                    &::after {
+                        background-image: url("../images/w_next.svg");
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            transition: .3s opacity;
+            width: 100%;
+            max-width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 28px;
+            z-index: 9;
+
+            .swiper-pagination-bullet {
+                background-color: #fff;
+                opacity: 0.2;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        }
+
+        .inner {
+            .swiper {
+                padding: 36px 0;
+                margin: 0 -7px;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+
+                .swiper-slide {
+                    .img-wrap {
+                        .badge {
+                            background: #fff;
+                            color: #000;
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                            z-index: 1;
+                            font-size: 0;
+
+                            &::before,
+                            &::after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                transition: opacity .29s ease;
+                                width: 64px;
+                                height: 64px;
+                                top: 0;
+                                left: 0;
+                                opacity: 0;
+
+                            }
+
+                            &::before {
+                                background-image: url(../images/c_new.svg);
+                            }
+
+                            &::after {
+                                background-image: url(../images/c_new_light.svg);
+                                opacity: 0;
+                            }
+
+                            &:hover {
+                                &::before {
+                                    opacity: 0;
+                                }
+
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .img-hover {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+                            transition: opacity .29s ease;
+                        }
+
+                        .img-default {
+                            opacity: 1;
+                            transition: opacity .29s ease;
+                        }
+
+                        .awards {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 14px;
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            z-index: 1;
+
+                            .award {
+                                position: relative;
+
+                                img {
+                                    transition: all .29s ease;
+                                }
+
+                                .light {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    opacity: 0;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .img-hover {
+                                opacity: 1;
+                            }
+
+                            .img-default {
+                                opacity: 0;
+                            }
+
+                            .awards {
+                                .ico {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    opacity: 0;
+                                }
+
+                                .light {
+                                    position: relative;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .tit {
+                        padding-top: 20px;
+                        line-height: 1.2;
+                        padding-left: 12px;
+
+                        img {
+                            max-height: 30px;
+                        }
+
+                        span {
+                            display: block;
+                            margin-top: 8px;
+                            color: #666;
+                            font-size: 11px;
+                            letter-spacing: -.05em;
+                            line-height: 1;
+                        }
+                    }
+
+                    .content {
+                        margin-top: 10px;
+                        padding-left: 12px;
+
+                        .desc {
+                            display: inline-block;
+                            color: #444;
+                            letter-spacing: -.03px;
+                            width: 100%;
+                            font-size: 16px;
+                            line-height: 1.5;
+                        }
+
+                        .tags {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            margin-top: 20px;
+                            font-size: 14px;
+
+                            .tag {
+                                display: inline-block;
+                                border: 1px solid rgba(0, 0, 0, .15);
+                                border-radius: 16px;
+                                padding: 6px 14px;
+                                line-height: 1;
+
+                                &.tag-em {
+                                    border: 1px solid #df251a;
+                                    color: #e0251a;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-promotions {
+        &>.inner {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            .more {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 32px;
+                    height: 32px;
+                    margin-left: 12px;
+                    background-image: url("../images/w_arrow_white.svg");
+                    background-color: #000;
+                    border-radius: 50%;
+                    background-repeat: no-repeat;
+                    background-size: 16px 16px;
+                    background-position: center;
+                    transition: background-color .3s,
+                        transform .3s;
+                }
+
+                &:hover::after {
+                    transform: translateX(6px);
+                }
+            }
+        }
+
+        .content {
+            width: 100%;
+            min-height: 587px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url(../images/MicrosoftTeams-image_1.jpg) no-repeat;
+            background-size: cover;
+            background-position: top;
+
+            .txt-wrap {
+                width: 100%;
+                height: 100%;
+                padding: 50px 180px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+
+                .title {
+                    font-size: 52px;
+                    font-weight: 700;
+                    letter-spacing: -0.005em;
+                    line-height: 64px;
+                }
+
+                time {
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: -0.005em;
+                    line-height: 24px;
+                    margin-top: 24px;
+                }
+
+                .more-link {
+                    margin-top: 32px;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 12px;
+                        background-image: url("../images/w_arrow_white.svg");
+                        background-color: #000;
+                        border-radius: 50%;
+                        background-repeat: no-repeat;
+                        background-size: 16px 16px;
+                        background-position: center;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+
+                    &:hover::after {
+                        transform: translateX(6px);
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-subscribe {
+        margin: 40px 0;
+        background: #f5f5f5;
+        padding: 90px 0;
+        display: flex;
+        flex-direction: column;
+
+        .headline {
+            width: 100%;
+            padding: 0 60px;
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 56px;
+            text-align: center;
+        }
+
+        .desc {
+            width: 100%;
+            padding: 0 60px;
+            margin-top: 8px;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: -0.01em;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        form {
+            .input-area {
+                width: 786px;
+                height: 60px;
+                border-radius: 32px;
+                border: 3px solid #000;
+                margin: 50px auto 0;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                background: #fff;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 40px;
+                    font-size: 18px;
+                    letter-spacing: -0.015em;
+                    background: transparent;
+                    font-weight: 400;
+                    font-family: "Hankook",
+                        "HankookMain",
+                        sans-serif;
+                    border: none;
+                }
+
+                label {
+                    display: none;
+                }
+
+                .btn {
+                    min-width: 136px;
+                    height: 40px;
+                    padding: 0 24px;
+                    background: #000;
+                    border-radius: 26px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                    letter-spacing: -0.01em;
+                    font-weight: 300;
+                    color: #fff;
+                    flex-shrink: 0;
+
+                    &:hover::after {
+                        transform: translateX(6px);
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        margin-left: 13px;
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        background-image: url(../images/w_arrow_white.svg);
+                        background-repeat: no-repeat;
+                        background-size: 12px 12px;
+                        background-position: center;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-technology {
+        padding: 60px 0 64px;
+
+        .inner {
+            position: relative;
+
+            &>img {
+                width: 523px;
+                margin-bottom: 32px;
+            }
+        }
+
+        .group-tech {
+            margin-top: 20px;
+
+            .tech-wrap {
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+            }
+
+            .link-wrap {
+                display: inline-block;
+                width: 160px;
+                height: 760px;
+                position: relative;
+                overflow: hidden;
+                transition: .5s;
+
+                &:hover {
+                    width: 20%;
+
+                    &.active {
+                        width: calc(100% - 320px);
+                    }
+                }
+
+                &.active {
+                    width: calc(100% - 320px);
+
+                    .text-area {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                img,
+                video {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    max-width: none;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    object-fit: cover;
+                }
+            }
+
+            .text-area {
+                opacity: 0;
+                visibility: hidden;
+                width: 740px;
+                padding: 60px 56px;
+                width: 640px;
+                color: #fff;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                transition: all .4s ease-out;
+                display: flex;
+                flex-direction: column;
+
+                small {
+                    display: inline-block;
+                    font-size: 13px;
+                }
+
+                .title {
+                    font-size: 48px;
+                    font-weight: 600;
+                    line-height: 1.17;
+                    letter-spacing: .05rem;
+                    padding: 12px 0 4px;
+                    margin-bottom: 20px;
+                }
+
+                .more {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    margin: 1em 0 1.2em;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 12px;
+                        background-image: url("../images/w_arrow.svg");
+                        background-color: #fff;
+                        border-radius: 50%;
+                        background-repeat: no-repeat;
+                        background-size: 16px 16px;
+                        background-position: center;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+
+                    &:hover::after {
+                        transform: translateX(6px);
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-why {
+        padding-top: 64px;
+
+        .img-wrap {
+            img {
+                width: 100%;
+                max-height: 800px;
+                object-fit: cover;
+            }
+        }
+
+        .txt-area {
+            text-align: center;
+
+            .headline {
+                padding-top: 28px;
+                font-size: 46px;
+                letter-spacing: -0.01em;
+            }
+
+            .desc {
+                margin: .6em 4rem 1em;
+                margin-top: .6em;
+                font-size: 18px;
+                line-height: 1.78;
+                letter-spacing: -0.01em;
+                color: #444;
+                font-family: "HankookMain",
+                    sans-serif;
+                font-weight: 300;
+            }
+
+            a {
+                font-size: 16px;
+
+                &:hover {
+                    span {
+                        &::after {
+                            transform: translateX(10px);
+                        }
+                    }
+                }
+
+                span {
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 12px;
+                        background-image: url("../images/w_arrow.svg");
+                        border-radius: 50%;
+                        background-color: rgba(0, 0, 0, .05);
+                        background-repeat: no-repeat;
+                        background-size: 16px 16px;
+                        background-position: center;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-media {
+        padding-top: 100px;
+
+        .inner {
+            position: relative;
+        }
+
+        .headline {
+            padding-bottom: 32px;
+        }
+
+        .swiper {
+            .img-wrap {
+                overflow: hidden;
+
+                img {
+                    transition: .5s;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .txt-area {
+                padding: 18px 0;
+
+                .category {
+                    font-size: 13px;
+                }
+
+                .desc {
+                    font-size: 24px;
+                    line-height: 1.2;
+                    margin: 10px 0 16px;
+                    left: -0.01em;
+                    font-weight: 500;
+                    width: 94%;
+                    font-family: "HankookMain",
+                        sans-serif;
+                }
+            }
+        }
+
+        .btn-wrap {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .btn {
+                position: relative;
+                cursor: pointer;
+                width: 52px;
+                height: 52px;
+
+                &:hover::before {
+                    transform: scale(.8);
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, .06);
+                    border-radius: 50%;
+                    transition: transform .26s;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-size: contain;
+                }
+
+                &.btn-prev {
+                    &::after {
+                        background-image: url("../images/w_prev.svg");
+                    }
+                }
+
+                &.btn-next {
+                    margin-left: 10px;
+
+                    &::after {
+                        background-image: url("../images/w_next.svg");
+                    }
+                }
+
+                &.swiper-button-disabled::after {
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+
+    .sc-tips {
+        padding: 102px 0 51px;
+
+        .headline {
+            text-align: center;
+        }
+
+        .group-area {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .item {
+                margin-top: 40px;
+                margin-bottom: 88px;
+                width: 25%;
+                text-align: center;
+
+                a {
+                    &:hover {
+                        span::after {
+                            transform: translateX(5px);
+                        }
+                    }
+                }
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .title {
+                    margin-top: 10px;
+                    font-size: 24px;
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+
+                .desc {
+                    display: block;
+                    margin: 1em 0;
+                    color: #444;
+                    font-size: 14px;
+                    line-height: 1.43;
+                }
+
+                span {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 5px 0;
+                    font-family: "HankookMain";
+                    font-size: 16px;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 16px;
+                        height: 16px;
+                        background-image: url("../images/w_arrow.svg");
+                        background-repeat: no-repeat;
+                        background-size: 12px 12px;
+                        background-position: center;
+                        margin-left: 4px;
+                        transition: background-color .3s,
+                            transform .3s;
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-bottomBanner {
+        .title {
+            max-width: 1408px;
+            display: block;
+            font-weight: 500;
+            font-family: "HankookMain",
+                sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            letter-spacing: -.025em;
+            margin: 0 auto 48px;
+        }
+
+        .swiper {
+            max-width: 1620px;
+            margin: 0 auto;
+
+            .swiper-wrapper {
+                display: flex;
+            }
+
+            .swiper-slide {
+                &:nth-child(1) a::after {
+                    background: url(../images/c_social_instagram.svg) no-repeat center/contain;
+                }
+
+                &:nth-child(4) a::after,
+                &:nth-child(8) a::after {
+                    background: url(../images/c_social_facebook.svg) no-repeat center/contain;
+                }
+
+                a {
+                    display: block;
+                    overflow: hidden;
+                    width: 360px;
+                    height: 360px;
+
+                    &:hover img {
+                        transform: scale(1.1);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 40px;
+                        height: 40px;
+                        background: url(../images/c_social_youtube.svg) no-repeat center/contain;
+                    }
+                }
+
+                img {
+                    transition: .3s;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .sc-search {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+        background-color: #fff;
+        transition: transform .5s cubic-bezier(.25, 1, .5, 1),
+            opacity .5s;
+        transform: translateY(-100%);
+        opacity: 0;
+
+        &.on {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform .5s cubic-bezier(.25, 1, .5, 1),
+                opacity .5s;
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 28px;
+            right: max(10.4167vw, 4rem);
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: url(../images/icon-close.svg) no-repeat 50% 50% #f0f0f0;
+            background-size: 16px;
+            border-radius: 50%;
+        }
+
+        .search-tab {
+            text-align: center;
+            margin-top: 20px;
+
+            .btn {
+                font-family: "HankookMain";
+                opacity: .3;
+                font-size: 22px;
+                padding: 14px;
+                transition: opacity .2s;
+                font-weight: 600;
+                color: #000;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .content {
+            color: #000;
+            padding: 0;
+            margin-top: 28px;
+
+            .inner {
+                display: flex;
+                max-width: 1520px;
+                width: 100%;
+                padding: 0 40px;
+
+                &>div:not(:last-child) {
+                    padding-right: 24px;
+                    border-right: solid 1px rgba(0, 0, 0, .1);
+                }
+            }
+
+            .search-tab-con {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+                padding: 24px 24px 0 0;
+
+                &.active {
+                    display: flex;
+                    flex: 0.8;
+                    padding-bottom: 72px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .select-tire {
+                    padding: 24px 24px 0 24px;
+                    border-right: solid 1px rgba(0, 0, 0, .1);
+                    width: 304px;
+
+                    .title {
+                        font-size: 16px;
+                        font-weight: 500;
+
+                        .num {
+                            vertical-align: baseline;
+                            padding-right: 4px;
+                        }
+                    }
+
+                    .con {
+
+                        .btn {
+                            font-family: "HankookMain";
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            min-height: 52px;
+                            font-size: 16px;
+                            text-align: left;
+                            line-height: 25px;
+                            word-break: break-all;
+                            padding: 10px 48px 10px 28px;
+                            margin-top: 16px;
+                            border-radius: 26px;
+                            background-color: #f0f0f0;
+                            font-weight: 600;
+
+                            &.active {
+                                color: #fff;
+                                background-color: #222;
+                            }
+                        }
+
+                        .btn-wrap {
+                            position: relative;
+
+                            .ico-question {
+                                position: absolute;
+                                top: 50%;
+                                right: 16px;
+                                transform: translateY(-50%);
+                                width: 24px;
+                                height: 24px;
+                                font-size: 0;
+                                border-radius: 50%;
+                                background: url("../images/icon-question.svg") no-repeat 50% 50% #aaa;
+                                background-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .select-vehicle {
+                    width: 70%;
+                    max-width: 406px;
+                    min-width: 200px;
+                    padding: 24px 0 0 24px;
+
+                    .con {
+                        .select-wrap {
+                            display: none;
+
+                            &.on {
+                                display: block;
+                            }
+                        }
+
+                        .select-box {
+                            position: relative;
+                        }
+
+                        .btn {
+                            font-family: "HankookMain";
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            min-height: 52px;
+                            font-size: 16px;
+                            text-align: left;
+                            line-height: 25px;
+                            word-break: break-all;
+                            padding: 10px 48px 10px 28px;
+                            margin-top: 16px;
+                            border-radius: 26px;
+                            background-color: #f0f0f0;
+                            color: #aaa;
+                            font-weight: 600;
+                            transition: color .2s;
+
+                            &:hover {
+                                color: #666;
+                            }
+
+                            &::before {
+                                display: block;
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                right: 24px;
+                                width: 18px;
+                                height: 100%;
+                                background: url("../images/icon-down-arrow.svg") no-repeat 50% 50%;
+                                background-size: 18px;
+                                transition: transform .2s;
+                            }
+
+                            &::after {
+                                content: "*";
+                                font-size: 16px;
+                                color: #000;
+                                margin-left: 4px;
+                            }
+
+                            &.active {
+                                &::before {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+
+                        .drop-box {
+                            overflow: hidden;
+                            position: absolute;
+                            top: 62px;
+                            left: 0;
+                            right: 0;
+                            max-height: 256px;
+                            z-index: 2;
+                            border-radius: 20px;
+                            backdrop-filter: blur(30px);
+                            background-color: #fff;
+                            box-shadow: 0 8px 24px 0 rgba(0, 0, 0, .1);
+                            transition: height .4s cubic-bezier(.25, 1, .5, 1);
+                            height: 0;
+
+                            button {
+                                height: auto;
+                                min-height: 42px;
+                                padding: 10px 16px;
+                                display: block;
+                                width: 100%;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: #666;
+                                line-height: 22px;
+                                text-align: left;
+                                word-break: break-all;
+                                font-family: "Hankook";
+
+                                &:first-child {
+                                    margin-top: 8px;
+                                }
+
+                                &:last-child {
+                                    margin-bottom: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .select-wrapper {
+                    width: 70%;
+
+                    .select-tire {
+                        padding: 24px 0 0 24px;
+                        border-right: none;
+                        width: 100%;
+                    }
+
+                    .select-vehicle {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .select-result {
+                flex: 1;
+                position: relative;
+                margin-right: -40px;
+                padding: 24px 0px 78px 48px;
+
+                .title {
+                    padding-right: 40px;
+                    font-size: 32px;
+                    font-weight: 600;
+
+                    .gray {
+                        vertical-align: baseline;
+                        color: #999;
+                        line-height: 1.19;
+                    }
+                }
+
+                .swiper {
+                    display: none;
+
+                    &.active {
+                        display: flex;
+                        overflow-x: auto;
+                        padding-right: 40px;
+                        margin-top: 32px;
+                        margin-left: -7px;
+                        margin-right: -7px;
+                    }
+
+                    .swiper-slide {
+                        padding: 0 7px;
+                        padding-bottom: 96px;
+                    }
+
+                    .link {
+                        .img-wrap {
+
+                            img {
+                                width: 100%;
+                            }
+
+                            .img-hover {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                opacity: 0;
+                                transition: opacity .29s ease;
+                            }
+
+                            .img-default {
+                                opacity: 1;
+                                transition: opacity .29s ease;
+                            }
+
+                            .awards {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 14px;
+                                position: absolute;
+                                top: 20px;
+                                right: 20px;
+                                z-index: 1;
+
+                                .award {
+                                    position: relative;
+
+                                    img {
+                                        width: 40px;
+                                        height: 40px;
+                                        transition: all .29s ease;
+                                    }
+
+                                    .light {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                .img-hover {
+                                    opacity: 1;
+                                }
+
+                                .img-default {
+                                    opacity: 0;
+                                }
+
+                                .awards {
+
+                                    .ico {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        opacity: 0;
+                                    }
+
+                                    .light {
+                                        position: relative;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+
+                        .tit {
+                            padding-top: 20px;
+                            line-height: 1.2;
+                            padding-left: 12px;
+
+                            img {
+                                max-height: 26px;
+                            }
+
+                            span {
+                                display: block;
+                                margin-top: 8px;
+                                color: #666;
+                                font-size: 11px;
+                                letter-spacing: -.05em;
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+                    .content {
+                        margin-top: 16px;
+                        font-size: 12px;
+                        padding-left: 12px;
+
+                        .desc {
+                            font-size: 14px;
+                            display: inline-block;
+                            color: #444;
+                            letter-spacing: -.03px;
+                            width: 100%;
+                            line-height: 1.5;
+                        }
+
+                        .tags {
+                            margin-top: 16px;
+                            font-size: 12px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+
+                            .tag {
+                                display: inline-block;
+                                border: 1px solid rgba(0, 0, 0, .15);
+                                border-radius: 16px;
+                                padding: 6px 14px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

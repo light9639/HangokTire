@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Icon_-_pc" data-name="Icon - pc" transform="translate(7 7)">
+        <g id="icon_pc" transform="translate(-8 -7.244)">
+            <path id="패스_45473" data-name="패스 45473" class="cls-2" d="M38.131 17.6a18.181 18.181 0 0 0-8.968-2.359 18.775 18.775 0 0 0-7.833 1.749l-2.268 1.085a37.147 37.147 0 0 1-6.135 2.313l-4.294 1.226A5.055 5.055 0 0 0 5 26.428v1.941a2.446 2.446 0 0 0 .661 1.652 2.357 2.357 0 0 0 1.653.657h3.057"/>
+            <path id="패스_45473-2" data-name="패스 45473" class="cls-2" d="M39 30.383h2.457a1.842 1.842 0 0 0 1.84-1.84v-5.809a1.992 1.992 0 0 0-.944-1.6L39 19.23" transform="translate(2.524 .296)"/>
+            <path id="패스_45473-3" data-name="패스 45473" class="cls-2" d="M16 29.612h18.262" transform="translate(.817 1.067)"/>
+            <circle id="타원_87" data-name="타원 87" class="cls-2" cx="3.223" cy="3.223" r="3.223" transform="translate(10.371 26.799)"/>
+            <circle id="타원_88" data-name="타원 88" class="cls-2" cx="3.223" cy="3.223" r="3.223" transform="translate(35.079 26.799)"/>
+        </g>
+    </g>
+</svg>

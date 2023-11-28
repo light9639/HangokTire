@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Icon_-_Clear" data-name="Icon - Clear" transform="translate(2 2)">
+        <path id="패스_45254" data-name="패스 45254" class="cls-2" d="M0 0v8.485" transform="rotate(45 3 7.243)"/>
+        <path id="패스_45255" data-name="패스 45255" class="cls-2" d="M0 0v8.485" transform="rotate(-45)"/>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Button_-_Menu" data-name="Button - Menu" transform="translate(-330 -122)">
+        <g id="Icon" transform="translate(0 -1)">
+            <g id="Icon_-_Close" data-name="Icon - Close" transform="translate(-20 -666)">
+                <path id="패스_45783" data-name="패스 45783" class="cls-2" d="m2206.274-2622.124 14 14" transform="translate(-1844.274 3424.124)"/>
+                <path id="패스_45784" data-name="패스 45784" class="cls-2" d="m2220.274-2622.124-14 14" transform="translate(-1844.274 3424.124)"/>
+            </g>
+        </g>
+    </g>
+</svg>

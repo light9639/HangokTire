@@ -1,0 +1,16 @@
+<svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="그룹_7668" data-name="그룹 7668" transform="translate(-4.905 -4.068)">
+        <path id="Path_45470" data-name="Path 45470" class="cls-2" d="M19.905 9.069v26"/>
+        <path id="Path_45470-2" data-name="Path 45470-2" class="cls-2" d="M15.9 9.069v26"/>
+        <g id="그룹_7718" data-name="그룹 7718">
+            <path id="패스_45576" data-name="패스 45576" class="cls-2" d="M33.99 33.154A6.474 6.474 0 1 1 35.731 30"/>
+            <path id="선_26" data-name="선 26" class="cls-2" transform="translate(33.989 33.154)" d="m0 0 4.415 4.415"/>
+        </g>
+        <path id="Rectangle_12242" data-name="Rectangle 12242" class="cls-2" d="M24.905 33.456v.774a4.921 4.921 0 0 1-5 4.839h-4a4.921 4.921 0 0 1-5-4.839V13.908a4.921 4.921 0 0 1 5-4.839h4a4.921 4.921 0 0 1 5 4.839v5.975"/>
+    </g>
+</svg>

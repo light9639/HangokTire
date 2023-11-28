@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="icon_tireguide" transform="translate(-164 -35.002)">
+    <g id="icon_-_tire_tips" data-name="icon - tire tips" transform="translate(-9 -16)">
+      <rect id="사각형_12367" data-name="사각형 12367" width="80" height="80" transform="translate(173 51.002)" fill="#fff" opacity="0"/>
+      <g id="icon_tire_tips" data-name="icon_tire tips" transform="translate(173 53.002)">
+        <path id="Path_45470" data-name="Path 45470" d="M44,15V62.039" transform="translate(0 -0.039)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="Path_45470-2" data-name="Path 45470" d="M36,15V62.039" transform="translate(0 -0.039)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="Rectangle_12242" data-name="Rectangle 12242" d="M52,31.406V54.258C52,58.534,48.162,62,43.429,62H36.571C31.838,62,28,58.534,28,54.258V21.742C28,17.466,31.838,14,36.571,14h6.858C48.162,14,52,17.466,52,21.742v3.335" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

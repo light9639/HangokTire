@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="Icon_-_truck" data-name="Icon - truck" transform="translate(-424.52 115.026)">
+        <g id="Icon_-_truck-2" data-name="Icon - truck" transform="translate(423.52 -117.026)">
+            <path id="패스_45590" data-name="패스 45590" class="cls-2" d="M20 35V13h25"/>
+            <circle id="타원_92" data-name="타원 92" class="cls-2" cx="3" cy="3" r="3" transform="translate(8 31)"/>
+            <path id="선_46" data-name="선 46" class="cls-2" transform="translate(14 35)" d="M11 0H0"/>
+            <path id="패스_45592" data-name="패스 45592" d="M6 0H0" transform="translate(39 35)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px"/>
+            <path id="패스_45591" data-name="패스 45591" class="cls-2" d="M16.375 27V15.313h-5.688A5.687 5.687 0 0 0 5 21h0v13a1 1 0 0 0 1 1h2"/>
+            <circle id="타원_93" data-name="타원 93" class="cls-2" cx="3" cy="3" r="3" transform="translate(25 31)"/>
+            <circle id="타원_94" data-name="타원 94" class="cls-2" cx="3" cy="3" r="3" transform="translate(33 31)"/>
+        </g>
+    </g>
+</svg>

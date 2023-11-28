@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="icon_drivingtips" transform="translate(-164 -35.003)">
+    <g id="icon_-_driving_tips" data-name="icon - driving tips" transform="translate(270.207 46.703)">
+      <rect id="사각형_12376" data-name="사각형 12376" width="80" height="80" transform="translate(-106.207 -11.7)" fill="#fff" opacity="0"/>
+      <g id="icon_driving_tips" data-name="icon_driving tips" transform="translate(-107.207 -11.7)">
+        <path id="패스_45473" data-name="패스 45473" d="M25,50.3H56.14" transform="translate(0.76 0.999)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="패스_45473-2" data-name="패스 45473" d="M58.986,26.076A32.061,32.061,0,0,0,47.618,24,33.112,33.112,0,0,0,33.8,27.08l-4,1.914a65.5,65.5,0,0,1-10.821,4.079l-7.572,2.163A8.916,8.916,0,0,0,5,43.726v3.5A4.314,4.314,0,0,0,6.165,50.14,4.159,4.159,0,0,0,9.081,51.3H13.3" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="패스_45473-3" data-name="패스 45473" d="M67.152,51.11h4.4A3.251,3.251,0,0,0,74.8,47.864V37.545a3.517,3.517,0,0,0-1.665-2.83L63,28.975" transform="translate(2.203 0.189)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <circle id="타원_79" data-name="타원 79" cx="6.228" cy="6.228" r="6.228" transform="translate(56.899 43.722)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <circle id="타원_80" data-name="타원 80" cx="6.228" cy="6.228" r="6.228" transform="translate(13.304 43.722)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
