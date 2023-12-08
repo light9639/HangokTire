@@ -631,10 +631,6 @@
                     height: 100%;
                 }
 
-                @include tb {
-                    height: 166px;
-                }
-
                 .content {
                     position: absolute;
                     left: 0;
@@ -645,6 +641,10 @@
                     @include tb {
                         top: 0;
                         padding: 28px 50px 45px 28px;
+                    }
+
+                    @include m {
+                        position: relative;
                     }
 
                     strong {
