@@ -1,13 +1,23 @@
 @mixin pc() {
-    @media (max-width: 1640px) {
+    @media (max-width: 1600px) {
         @content;
     }
 }
 
-@mixin pc-lg() {}
+@mixin pc-lg() {
+    @media (max-width: 1528px) {
+        @content;
+    }
+}
+
+@mixin pc-md() {
+    @media (max-width: 1366px) {
+        @content;
+    }
+}
 
 @mixin tb() {
-    @media (max-width: 1200px) {
+    @media (max-width: 1024px) {
         @content;
     }
 }

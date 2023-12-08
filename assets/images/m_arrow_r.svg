@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="icon_search" transform="translate(6 5)">
+        <g id="icon_arrow" transform="translate(-1017.109 -1040)">
+            <path id="패스_45278" data-name="패스 45278" class="cls-2" d="m258.7 1955 6 6-6 6" transform="translate(765.408 -914)"/>
+            <path id="패스_45279" data-name="패스 45279" class="cls-2" d="M-8854.892 1046h-14" transform="translate(9885 1)"/>
+        </g>
+    </g>
+</svg>

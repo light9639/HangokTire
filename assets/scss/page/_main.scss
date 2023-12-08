@@ -12,10 +12,14 @@
         position: relative;
         overflow-x: hidden;
         overflow-y: visible;
-        height: calc(100vh);
+        height: 100vh;
         min-height: 560px;
         max-height: 1000px;
         padding-top: 110px;
+
+        @include tb {
+            padding-top: 92px;
+        }
 
         .content {
             height: 100%;
@@ -35,6 +39,7 @@
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
+                    pointer-events: none;
                 }
             }
 
@@ -52,6 +57,17 @@
                 background-color: #fff;
                 border: 1px solid #ddd;
 
+                @include tb {
+                    min-width: 550px;
+                    padding: 8px 10px;
+                }
+
+                @include m {
+                    min-width: 95%;
+                    width: calc(100% - 60px);
+                    padding: 5px 8px;
+                }
+
                 .switch-wrap {
                     position: relative;
                     white-space: nowrap;
@@ -60,6 +76,11 @@
                     background-color: #000;
                     display: flex;
                     align-items: center;
+
+                    @include tb {
+                        height: 40px;
+                        padding: 0 14px;
+                    }
 
                     .switch {
                         position: relative;
@@ -77,6 +98,11 @@
                             height: 48px;
                             opacity: .4;
                             background-size: 100%;
+
+                            @include tb {
+                                width: 40px;
+                                height: 40px;
+                            }
                         }
 
                         &:first-child::after {
@@ -151,6 +177,7 @@
                     &.on {
                         display: flex;
                         align-items: center;
+                        flex: 1;
                     }
 
                     .cond-mobile,
@@ -159,6 +186,16 @@
                         padding-left: 72px;
                         padding-right: 50px;
                         cursor: pointer;
+
+                        @include tb {
+                            padding-left: 40px;
+                            padding-right: 28px;
+                        }
+
+                        @include m {
+                            padding: 0 16px 0 20px;
+                            flex: 1;
+                        }
 
                         &::before {
                             content: "";
@@ -170,6 +207,10 @@
                             top: 50%;
                             transform: translate(0, -50%);
                             background-color: rgba(0, 0, 0, 0.15);
+
+                            @include m {
+                                content: none;
+                            }
                         }
 
                         &:first-child::before {
@@ -181,6 +222,20 @@
                             color: #666;
                             font-size: 14px;
                             font-weight: 500;
+
+                            @include tb {
+                                font-size: 11px;
+                                line-height: 1.15;
+                            }
+
+                            @include m {
+                                letter-spacing: -0.011rem;
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+
+                            }
                         }
 
                         .title {
@@ -189,6 +244,23 @@
                             white-space: nowrap;
                             font-size: 24px;
                             font-weight: 600;
+
+                            @include tb {
+                                font-size: 16px;
+                            }
+
+                            @include m {
+                                position: relative;
+                                vertical-align: bottom;
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                transform: translateY(-0.1rem);
+                                padding: 0;
+                                line-height: 1.5;
+                                letter-spacing: -0.008rem;
+                            }
 
                             &::after {
                                 content: "";
@@ -206,17 +278,209 @@
                                 background-position: center;
                                 transition: background-color .3s,
                                     transform .3s;
+
+                                @include tb {
+                                    width: 24px;
+                                    height: 24px;
+                                    background-image: url(../images/m_arrow.svg);
+                                }
+
+                                @include m {
+                                    content: none;
+                                }
                             }
                         }
                     }
 
                     .cond-mobile {
                         display: none;
+
+                        @include m {
+                            display: block;
+                            text-align: left;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            bottom: 0;
+                            right: 45px;
+                            transform: translateY(-25%);
+                            display: inline-block;
+                            content: "";
+                            vertical-align: bottom;
+                            width: 16px;
+                            height: 16px;
+                            background: url(../images/icon-down-arrow.svg) no-repeat 50% 50%;
+                            background-size: 16px;
+                        }
+
+                        small {
+                            @include m {
+                                letter-spacing: -0.11px;
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        .title {
+                            @include m {
+                                position: relative;
+                                vertical-align: bottom;
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+
+                    .cond {
+                        display: block;
+
+                        @include m {
+                            display: none;
+                        }
                     }
                 }
 
-                .link {
+                .mobile-link {
                     display: none;
+
+                    @include m {
+                        display: block;
+                        position: absolute;
+                        right: 8px;
+                    }
+
+                    &::after {
+                        @include m {
+                            content: "";
+                            display: inline-block;
+                            position: relative;
+                            vertical-align: middle;
+                            margin-left: 12px;
+                            border-radius: 50%;
+                            background-color: rgba(0, 0, 0, .05);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            transition: background-color .3s,
+                                transform .3s;
+                            background-image: url(../images/m_arrow_r.svg);
+                            width: 40px;
+                            height: 40px;
+                            background-size: 24px 24px;
+                        }
+                    }
+                }
+            }
+
+            .popup-local {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+
+                @include tb {
+                    display: block;
+                }
+
+                .popup-base {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 100%;
+                    z-index: 10000;
+                    transition: all .1s;
+                    transition-delay: .3s;
+                    width: 100vw;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    &.active {
+                        visibility: visible;
+                        opacity: 1;
+
+                        .dim {
+                            opacity: 1;
+                            background-color: transparent;
+                        }
+                    }
+
+                    .dim {
+                        opacity: 0;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, .7);
+                        z-index: 1;
+                        transition: opacity .3s;
+                    }
+
+                    .pop-inner {
+                        position: absolute;
+                        overflow: hidden;
+                        top: auto;
+                        left: 50%;
+                        bottom: 20px;
+                        width: calc(100% - 30px);
+                        margin-left: -5px;
+                        max-width: 768px;
+                        padding-top: 0;
+                        border-radius: 12px;
+                        backdrop-filter: blur(30px);
+                        box-shadow: 0 8px 24px 0 rgba(0, 0, 0, .15);
+                        background-color: #fff;
+                        transform: translate(-50%, 0);
+                        min-height: unset;
+                        z-index: 2;
+
+                        .pop-con {
+                            font-size: 18px;
+                            font-weight: 300;
+                            text-align: center;
+                            padding: 0;
+                            border-bottom: solid 1px rgba(0, 0, 0, .1);
+
+                            &>*:not(:last-child) {
+                                border-bottom: none;
+                            }
+
+                            &>* {
+                                display: block;
+                                width: 100%;
+                                height: 44px;
+                                text-align: left;
+                                line-height: 44px;
+                                padding-left: 32px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: #666;
+                        }
+
+                        .pop-select-btn {
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #000;
+
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.06);
+                            }
+
+                            &.active {
+                                background-color: rgba(0, 0, 0, .06);
+                            }
+                        }
+                    }
                 }
             }
 
@@ -255,7 +519,17 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 16px;
-            padding: 56px 0;
+            padding: 56px 0 0;
+
+            @include tb {
+                padding: 28px 0;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include tb {
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         .item {
@@ -263,13 +537,18 @@
             display: block;
             overflow: hidden;
 
+            &.hidden {
+                @include tb {
+                    display: none;
+                }
+            }
+
             &:hover {
                 .bg {
                     transform: scale(1.1);
                 }
 
                 .content {
-
                     .link-more::after {
                         transform: translate(6px);
                     }
@@ -296,6 +575,11 @@
                     margin-top: 10px;
                     letter-spacing: -0.02em;
                     font-weight: 300;
+
+                    @include tb {
+                        font-size: 14px;
+                        line-height: 1.57;
+                    }
                 }
 
                 .link-more {
@@ -305,6 +589,11 @@
                     font-weight: 500;
                     font-family: "HankookMain";
                     color: #fff;
+
+                    @include tb {
+                        font-size: 14px;
+                        padding: 5px 0;
+                    }
 
                     &::after {
                         content: "";
@@ -322,6 +611,12 @@
                         background-position: center;
                         transition: background-color .3s,
                             transform .3s;
+
+                        @include tb {
+                            width: 24px;
+                            height: 24px;
+                            background-image: url("../images/m_arrow.svg");
+                        }
                     }
                 }
             }
@@ -332,12 +627,25 @@
                 height: 368px;
                 background-color: #000;
 
+                @include tb {
+                    height: 100%;
+                }
+
+                @include tb {
+                    height: 166px;
+                }
+
                 .content {
                     position: absolute;
                     left: 0;
                     bottom: 0;
                     padding: 28px;
                     z-index: 2;
+
+                    @include tb {
+                        top: 0;
+                        padding: 28px 50px 45px 28px;
+                    }
 
                     strong {
                         color: #fff;
@@ -346,6 +654,10 @@
                         font-family: "Hankook",
                             sans-serif;
                         font-weight: bold;
+
+                        @include m {
+                            font-size: 24px;
+                        }
                     }
                 }
             }
@@ -354,42 +666,117 @@
                 grid-column: 3/5;
                 grid-row: 1/3;
                 background-color: aliceblue;
+
+                @include tb {
+                    grid-column: 1/3;
+                    grid-row: 2;
+                }
             }
 
             &:nth-child(3) {
                 grid-column: 2/3;
                 grid-row: 1;
                 background-color: beige;
+
+                @include tb {
+                    grid-column: 2;
+                    grid-row: 1;
+                }
             }
 
             &:nth-child(4) {
                 grid-column: 1/3;
                 grid-row: 2;
                 background-color: lightpink;
+
+                @include tb {
+                    grid-row: 3;
+                }
             }
 
             &:nth-child(5) {
                 grid-column: 1;
                 grid-row: 3;
                 background-color: lightpink;
+
+                @include tb {
+                    grid-column: auto;
+                    grid-row: auto;
+                }
             }
 
             &:nth-child(6) {
                 grid-column: 2;
                 grid-row: 3;
                 background-color: lightpink;
+
+                @include tb {
+                    grid-column: auto;
+                    grid-row: auto;
+                }
             }
 
             &:nth-child(7) {
                 grid-column: 3;
                 grid-row: 3;
                 background-color: lightpink;
+
+                @include tb {
+                    grid-column: auto;
+                    grid-row: auto;
+                }
             }
 
             &:nth-child(8) {
                 grid-column: 4;
                 grid-row: 3;
                 background-color: lightpink;
+
+                @include tb {
+                    grid-column: auto;
+                    grid-row: auto;
+                }
+            }
+        }
+
+        .func {
+            display: none;
+
+            @include tb {
+                display: block;
+                padding-top: 0;
+                text-align: center;
+                color: #000;
+                position: relative;
+                font-size: 14px;
+                font-family: "HankookMain";
+                font-weight: 500;
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            &:hover::after {
+                transform: rotate(90deg);
+            }
+
+            &::after {
+                width: 24px;
+                height: 24px;
+                background-image: url("../images/m_plus.svg");
+                content: "";
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                margin-left: 12px;
+                border-radius: 50%;
+                background-color: rgba(0, 0, 0, .05);
+                background-repeat: no-repeat;
+                background-size: 16px 16px;
+                background-position: center;
+                transition: background-color .3s,
+                    transform .3s;
             }
         }
     }
@@ -400,16 +787,30 @@
         .headline {
             margin-bottom: 15px;
             text-align: center;
+
+            @include m {
+                font-size: 28px;
+            }
         }
 
         &>.swiper {
             position: relative;
 
             .swiper-slide {
+                @include m {
+                    height: 400px;
+                }
+
                 &:hover {
                     .more::after {
                         transform: translate(6px);
                     }
+                }
+
+                &>img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
 
                 .content {
@@ -434,6 +835,10 @@
                         position: relative;
                         color: #fff;
 
+                        @include tb {
+                            font-size: 14px;
+                        }
+
                         &::after {
                             content: "";
                             display: inline-block;
@@ -450,6 +855,12 @@
                             background-position: center;
                             transition: background-color .3s,
                                 transform .3s;
+
+                            @include tb {
+                                width: 24px;
+                                height: 24px;
+                                background-image: url("../images/m_arrow.svg");
+                            }
                         }
                     }
                 }
@@ -463,6 +874,10 @@
                 width: 52px;
                 height: 52px;
                 cursor: pointer;
+
+                @include tb {
+                    display: none;
+                }
 
                 &.swiper-button-disabled::after {
                     opacity: 0.4;
@@ -536,10 +951,19 @@
         }
 
         .inner {
+            @include m {
+                padding: 0 20px;
+            }
+
             .swiper {
                 padding: 36px 0;
                 margin: 0 -7px;
                 display: none;
+
+                @include m {
+                    padding: 20px 0;
+                    margin: 0 auto;
+                }
 
                 &.active {
                     display: block;
@@ -683,6 +1107,10 @@
                             width: 100%;
                             font-size: 16px;
                             line-height: 1.5;
+
+                            @include tb {
+                                font-size: 14px;
+                            }
                         }
 
                         .tags {
@@ -691,6 +1119,11 @@
                             gap: 8px;
                             margin-top: 20px;
                             font-size: 14px;
+
+                            @include tb {
+                                margin-top: 16px;
+                                font-size: 12px;
+                            }
 
                             .tag {
                                 display: inline-block;
@@ -718,8 +1151,38 @@
             justify-content: space-between;
             margin-bottom: 30px;
 
+            @include m {
+                display: block;
+                margin-bottom: 14px;
+            }
+
+            .headline {
+                @include tb {
+                    font-size: 28px;
+                    letter-spacing: -.01em;
+                    line-height: 35px;
+                }
+
+                @include m {
+                    width: 100%;
+                }
+            }
+
             .more {
                 position: relative;
+
+                @include tb {
+                    font-size: 14px;
+                }
+
+                @include m {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 5px 0;
+                }
 
                 &::after {
                     content: "";
@@ -737,6 +1200,12 @@
                     background-position: center;
                     transition: background-color .3s,
                         transform .3s;
+
+                    @include tb {
+                        width: 24px;
+                        height: 24px;
+                        background-image: url(../images/m_arrow_white.svg);
+                    }
                 }
 
                 &:hover::after {
@@ -756,6 +1225,20 @@
             background-size: cover;
             background-position: top;
 
+            @include tb {
+                width: 100%;
+                min-height: 280px;
+                background: url(../images/MicrosoftTeams-image_2.jpg) no-repeat;
+                background-size: cover;
+            }
+
+            @include m {
+                align-items: flex-start;
+                min-height: 560px;
+                background: url(../images/MicrosoftTeams-image_3.jpg) no-repeat;
+                background-size: cover;
+            }
+
             .txt-wrap {
                 width: 100%;
                 height: 100%;
@@ -765,11 +1248,31 @@
                 justify-content: center;
                 flex-direction: column;
 
+                @include tb {
+                    padding: 34px 40px;
+
+                }
+
+                @include m {
+                    padding: 32px 40px;
+                }
+
                 .title {
                     font-size: 52px;
                     font-weight: 700;
                     letter-spacing: -0.005em;
                     line-height: 64px;
+
+                    @include tb {
+                        font-size: 30px;
+                        letter-spacing: -.02em;
+                        line-height: 40px;
+                    }
+
+                    @include m {
+                        font-size: 28px;
+                        letter-spacing: -.05em;
+                    }
                 }
 
                 time {
@@ -778,10 +1281,20 @@
                     letter-spacing: -0.005em;
                     line-height: 24px;
                     margin-top: 24px;
+
+                    @include tb {
+                        font-size: 14px;
+                        line-height: 17px;
+                        margin-top: 16px;
+                    }
                 }
 
                 .more-link {
                     margin-top: 32px;
+
+                    @include tb {
+                        margin-top: 24px;
+                    }
 
                     &::after {
                         content: "";
@@ -816,6 +1329,14 @@
         display: flex;
         flex-direction: column;
 
+        @include tb {
+            margin: 88px 0;
+        }
+
+        @include m {
+            margin: 40px 0;
+        }
+
         .headline {
             width: 100%;
             padding: 0 60px;
@@ -824,6 +1345,17 @@
             letter-spacing: -0.015em;
             line-height: 56px;
             text-align: center;
+
+            @include tb {
+                font-size: 38px;
+                padding: 0 32px;
+            }
+
+            @include m {
+                font-size: 28px;
+                padding: 0 20px;
+                line-height: 36px;
+            }
         }
 
         .desc {
@@ -835,9 +1367,26 @@
             letter-spacing: -0.01em;
             text-align: center;
             font-weight: 300;
+
+            @include tb {
+                padding: 0 32px;
+                letter-spacing: -0.015em;
+                line-height: 38px;
+            }
+
+            @include m {
+                margin-top: 12px;
+                font-size: 16px;
+                line-height: 24px;
+                padding: 0 20px;
+            }
         }
 
         form {
+            @include m {
+                padding: 0 20px;
+            }
+
             .input-area {
                 width: 786px;
                 height: 60px;
@@ -848,6 +1397,21 @@
                 align-items: center;
                 padding: 0 10px;
                 background: #fff;
+
+                @include tb {
+                    width: 560px;
+                    margin: 53px auto 0;
+                }
+
+                @include m {
+                    width: 100%;
+                    min-width: auto;
+                    height: auto;
+                    margin: 32px auto 0;
+                    border: 0;
+                    flex-direction: column;
+                    background: transparent;
+                }
 
                 input {
                     width: 100%;
@@ -861,6 +1425,18 @@
                         "HankookMain",
                         sans-serif;
                     border: none;
+
+                    @include m {
+                        width: 100%;
+                        height: 48px;
+                        font-size: 16px;
+                        text-align: center;
+                        margin-bottom: 24px;
+                        padding: 0 30px;
+                        background: #fff;
+                        border-radius: 32px;
+                        border: 3px solid #000;
+                    }
                 }
 
                 label {
@@ -881,6 +1457,10 @@
                     font-weight: 300;
                     color: #fff;
                     flex-shrink: 0;
+
+                    @include m {
+                        margin: 0 auto;
+                    }
 
                     &:hover::after {
                         transform: translateX(6px);
@@ -909,12 +1489,20 @@
     .sc-technology {
         padding: 60px 0 64px;
 
+        @include tb {
+            padding: 0 0 32px;
+        }
+
         .inner {
             position: relative;
 
             &>img {
                 width: 523px;
                 margin-bottom: 32px;
+
+                @include m {
+                    margin-left: auto;
+                }
             }
         }
 
@@ -925,6 +1513,10 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
+
+                @include m {
+                    flex-direction: column;
+                }
             }
 
             .link-wrap {
@@ -935,16 +1527,43 @@
                 overflow: hidden;
                 transition: .5s;
 
+                @include tb {
+                    width: 64px;
+                    height: 624px;
+                }
+
+                @include m {
+                    width: 100%;
+                    height: 80px;
+                }
+
                 &:hover {
                     width: 20%;
 
+                    @include m {
+                        width: 100%;
+                    }
+
                     &.active {
                         width: calc(100% - 320px);
+
+                        @include tb {
+                            width: calc(100% - 128px);
+                        }
+
+                        @include m {
+                            width: 100%;
+                        }
                     }
                 }
 
                 &.active {
-                    width: calc(100% - 320px);
+                    width: calc(100% - 128px);
+
+                    @include m {
+                        width: 100%;
+                        height: 440px;
+                    }
 
                     .text-area {
                         visibility: visible;
@@ -979,9 +1598,18 @@
                 display: flex;
                 flex-direction: column;
 
+                @include tb {
+                    padding: 32px 24px;
+                }
+
                 small {
                     display: inline-block;
                     font-size: 13px;
+
+                    @include tb {
+                        display: inline-block;
+                        font-size: 11px;
+                    }
                 }
 
                 .title {
@@ -991,6 +1619,15 @@
                     letter-spacing: .05rem;
                     padding: 12px 0 4px;
                     margin-bottom: 20px;
+
+                    @include tb {
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 1.25;
+                        letter-spacing: .03rem;
+                        padding: 8px 0 4px;
+                        margin-bottom: 0;
+                    }
                 }
 
                 .more {
@@ -999,6 +1636,14 @@
                     font-weight: 500;
                     line-height: 1.5;
                     margin: 1em 0 1.2em;
+
+                    @include tb {
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+                        padding: 5px 0;
+                        margin: 0;
+                    }
 
                     &::after {
                         content: "";
@@ -1016,6 +1661,11 @@
                         background-position: center;
                         transition: background-color .3s,
                             transform .3s;
+
+                        @include tb {
+                            width: 24px;
+                            height: 24px;
+                        }
                     }
 
                     &:hover::after {
@@ -1028,6 +1678,10 @@
 
     .sc-why {
         padding-top: 64px;
+
+        @include m {
+            padding-top: 32px;
+        }
 
         .img-wrap {
             img {
@@ -1044,10 +1698,16 @@
                 padding-top: 28px;
                 font-size: 46px;
                 letter-spacing: -0.01em;
+
+                @include m {
+                    padding-top: 16px;
+                    font-size: 24px;
+                    letter-spacing: -0.05rem;
+                }
             }
 
             .desc {
-                margin: .6em 4rem 1em;
+                margin: .6em 40px 1em;
                 margin-top: .6em;
                 font-size: 18px;
                 line-height: 1.78;
@@ -1056,10 +1716,21 @@
                 font-family: "HankookMain",
                     sans-serif;
                 font-weight: 300;
+
+                @include m {
+                    margin: .6em 40px .8em;
+                    font-size: 14px;
+                    letter-spacing: -0.01em;
+                    line-height: 1.43;
+                }
             }
 
             a {
                 font-size: 16px;
+
+                @include m {
+                    font-size: 14px;
+                }
 
                 &:hover {
                     span {
@@ -1070,6 +1741,7 @@
                 }
 
                 span {
+
                     &::after {
                         content: "";
                         display: inline-block;
@@ -1086,6 +1758,12 @@
                         background-position: center;
                         transition: background-color .3s,
                             transform .3s;
+
+                        @include m {
+                            width: 24px;
+                            height: 24px;
+                            background-image: url("../images/m_arrow.svg");
+                        }
                     }
                 }
             }
@@ -1095,15 +1773,46 @@
     .sc-media {
         padding-top: 100px;
 
+        @include m {
+            padding-top: 80px;
+        }
+
         .inner {
             position: relative;
+
+            @include tb {
+                padding: 0;
+            }
+
+            @include m {
+                padding: 0;
+            }
         }
 
         .headline {
             padding-bottom: 32px;
+
+            @include tb {
+                font-size: 28px;
+                padding-bottom: 18px;
+                padding-left: 40px;
+            }
+
+            @include m {
+                padding-left: 20px;
+            }
         }
 
         .swiper {
+
+            @include tb {
+                padding-left: 40px;
+            }
+
+            @include tb {
+                padding-left: 20px;
+            }
+
             .img-wrap {
                 overflow: hidden;
 
@@ -1119,6 +1828,10 @@
             .txt-area {
                 padding: 18px 0;
 
+                @include tb {
+                    padding: 16px 0;
+                }
+
                 .category {
                     font-size: 13px;
                 }
@@ -1132,6 +1845,12 @@
                     width: 94%;
                     font-family: "HankookMain",
                         sans-serif;
+
+                    @include tb {
+                        font-size: 16px;
+                        line-height: 1.3;
+                        margin: 8px 0 16px;
+                    }
                 }
             }
         }
@@ -1141,6 +1860,10 @@
             position: absolute;
             top: 0;
             right: 0;
+
+            @include tb {
+                display: none;
+            }
 
             .btn {
                 position: relative;
@@ -1200,6 +1923,10 @@
 
         .headline {
             text-align: center;
+
+            @include m {
+                font-size: 24px;
+            }
         }
 
         .group-area {
@@ -1213,6 +1940,11 @@
                 margin-bottom: 88px;
                 width: 25%;
                 text-align: center;
+
+                @include m {
+                    width: 50%;
+                    margin: 10px 0;
+                }
 
                 a {
                     &:hover {
@@ -1233,6 +1965,11 @@
                     display: block;
                     font-weight: 600;
                     margin-bottom: 10px;
+
+                    @include tb {
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
                 }
 
                 .desc {
@@ -1241,6 +1978,10 @@
                     color: #444;
                     font-size: 14px;
                     line-height: 1.43;
+
+                    @include tb {
+                        display: none;
+                    }
                 }
 
                 span {
@@ -1251,6 +1992,10 @@
                     padding: 5px 0;
                     font-family: "HankookMain";
                     font-size: 16px;
+
+                    @include tb {
+                        font-size: 13px;
+                    }
 
                     &::after {
                         content: "";
@@ -1283,24 +2028,57 @@
             line-height: 1.6;
             letter-spacing: -.025em;
             margin: 0 auto 48px;
+
+            @include pc {
+                padding-left: 60px;
+                margin-left: 0;
+            }
+
+            @include m {
+                text-align: center;
+                margin-bottom: 40px;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: -.025em;
+            }
+
+            .gray {
+                @include m {
+                    color: #666;
+                }
+            }
         }
 
         .swiper {
-            max-width: 1620px;
-            margin: 0 auto;
-
             .swiper-wrapper {
                 display: flex;
+
+                @include m {
+                    flex-wrap: wrap;
+                }
             }
 
             .swiper-slide {
-                &:nth-child(1) a::after {
+                width: 360px;
+
+                @include tb {
+                    width: 195px;
+                }
+
+                @include m {
+                    width: 50%;
+                }
+
+                &.instagram a::after {
                     background: url(../images/c_social_instagram.svg) no-repeat center/contain;
                 }
 
-                &:nth-child(4) a::after,
-                &:nth-child(8) a::after {
+                &.facebook a::after {
                     background: url(../images/c_social_facebook.svg) no-repeat center/contain;
+                }
+
+                &.youtube a::after {
+                    background: url(../images/c_social_youtube.svg) no-repeat center/contain;
                 }
 
                 a {
@@ -1308,6 +2086,16 @@
                     overflow: hidden;
                     width: 360px;
                     height: 360px;
+
+                    @include tb {
+                        width: 195px;
+                        height: 195px;
+                    }
+
+                    @include m {
+                        width: 100%;
+                        height: 100%;
+                    }
 
                     &:hover img {
                         transform: scale(1.1);
@@ -1320,7 +2108,6 @@
                         right: 10px;
                         width: 40px;
                         height: 40px;
-                        background: url(../images/c_social_youtube.svg) no-repeat center/contain;
                     }
                 }
 
@@ -1343,6 +2130,17 @@
             opacity .5s;
         transform: translateY(-100%);
         opacity: 0;
+        --box-height: 58px;
+        --all-height: 256px;
+
+        @include tb {
+            top: unset;
+            bottom: 0;
+            padding-top: 56px;
+            background-color: transparent;
+            max-height: calc(var(772px, 100vh) * .88);
+            transform: translateY(100%);
+        }
 
         &.on {
             transform: translateY(0);
@@ -1361,11 +2159,24 @@
             background: url(../images/icon-close.svg) no-repeat 50% 50% #f0f0f0;
             background-size: 16px;
             border-radius: 50%;
+
+            @include tb {
+                top: 0;
+                right: 50%;
+                transform: translateX(50%);
+                background-image: url(../images/icon-close-mobile.svg);
+                width: 46px;
+                height: 46px;
+            }
         }
 
         .search-tab {
             text-align: center;
             margin-top: 20px;
+
+            @include tb {
+                display: none;
+            }
 
             .btn {
                 font-family: "HankookMain";
@@ -1387,15 +2198,38 @@
             padding: 0;
             margin-top: 28px;
 
+            @include tb {
+                overflow-y: scroll;
+                max-height: calc(var(772px, 100vh) * .88);
+                padding: 0;
+                margin-top: 0;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                background-color: #fff;
+            }
+
             .inner {
                 display: flex;
                 max-width: 1520px;
                 width: 100%;
                 padding: 0 40px;
 
+                @include tb {
+                    display: block;
+                    padding: 0;
+                }
+
+                @include m {
+                    height: auto;
+                }
+
                 &>div:not(:last-child) {
                     padding-right: 24px;
                     border-right: solid 1px rgba(0, 0, 0, .1);
+
+                    @include tb {
+                        padding-right: 0;
+                    }
                 }
             }
 
@@ -1405,12 +2239,21 @@
                 visibility: hidden;
                 padding: 24px 24px 0 0;
 
+                @include tb {
+                    padding: 0;
+                }
+
                 &.active {
                     display: flex;
                     flex: 0.8;
                     padding-bottom: 72px;
                     opacity: 1;
                     visibility: visible;
+
+                    @include tb {
+                        display: block;
+                        padding-bottom: unset;
+                    }
                 }
 
                 .select-tire {
@@ -1418,9 +2261,18 @@
                     border-right: solid 1px rgba(0, 0, 0, .1);
                     width: 304px;
 
+                    @include tb {
+                        padding: 0;
+                        width: 100%;
+                    }
+
                     .title {
                         font-size: 16px;
                         font-weight: 500;
+
+                        @include tb {
+                            display: none;
+                        }
 
                         .num {
                             vertical-align: baseline;
@@ -1429,6 +2281,10 @@
                     }
 
                     .con {
+                        @include tb {
+                            display: flex;
+                            border-bottom: solid 1px rgba(0, 0, 0, .1);
+                        }
 
                         .btn {
                             font-family: "HankookMain";
@@ -1446,14 +2302,39 @@
                             background-color: #f0f0f0;
                             font-weight: 600;
 
+                            @include tb {
+                                flex: 1;
+                                opacity: .5;
+                                min-height: 72px;
+                                color: #000;
+                                line-height: 1.5;
+                                padding: 8px 48px 10px 24px;
+                                margin-top: 0;
+                                margin-bottom: -1px;
+                                border-radius: 0;
+                                background-color: #fff;
+                                border-bottom: solid 1px transparent;
+                            }
+
                             &.active {
                                 color: #fff;
                                 background-color: #222;
+
+                                @include tb {
+                                    opacity: 1;
+                                    border-color: #000;
+                                    background-color: transparent;
+                                    color: #000;
+                                }
                             }
                         }
 
                         .btn-wrap {
                             position: relative;
+
+                            @include tb {
+                                width: 50%;
+                            }
 
                             .ico-question {
                                 position: absolute;
@@ -1466,6 +2347,7 @@
                                 border-radius: 50%;
                                 background: url("../images/icon-question.svg") no-repeat 50% 50% #aaa;
                                 background-size: 16px;
+
                             }
                         }
                     }
@@ -1476,6 +2358,26 @@
                     max-width: 406px;
                     min-width: 200px;
                     padding: 24px 0 0 24px;
+
+                    @include tb {
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 0 20px;
+                    }
+
+                    .title {
+                        @include tb {
+                            font-size: 14px;
+                            text-align: center;
+                            margin-top: 28px;
+                        }
+
+                        .num {
+                            @include tb {
+                                display: none;
+                            }
+                        }
+                    }
 
                     .con {
                         .select-wrap {
@@ -1507,6 +2409,11 @@
                             color: #aaa;
                             font-weight: 600;
                             transition: color .2s;
+
+                            @include tb {
+                                min-height: 48px;
+                                padding: 8px 48px 10px 24px;
+                            }
 
                             &:hover {
                                 color: #666;
@@ -1540,7 +2447,7 @@
                         }
 
                         .drop-box {
-                            overflow: hidden;
+                            overflow-y: auto;
                             position: absolute;
                             top: 62px;
                             left: 0;
@@ -1553,6 +2460,13 @@
                             box-shadow: 0 8px 24px 0 rgba(0, 0, 0, .1);
                             transition: height .4s cubic-bezier(.25, 1, .5, 1);
                             height: 0;
+
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
 
                             button {
                                 height: auto;
@@ -1601,10 +2515,31 @@
                 margin-right: -40px;
                 padding: 24px 0px 78px 48px;
 
+                @include tb {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 24px;
+                    text-align: center;
+                    padding: 0 0 98px;
+                    margin-right: 0;
+                    margin-top: -1px;
+                }
+
                 .title {
                     padding-right: 40px;
                     font-size: 32px;
                     font-weight: 600;
+
+                    @include m {
+                        display: block;
+                        line-height: 1.3;
+                        order: 2;
+                        font-size: 24px;
+                        padding-right: 0;
+                        padding-top: 18px;
+                        margin-top: 34px;
+                        border-top: solid 1px rgba(0, 0, 0, .1);
+                    }
 
                     .gray {
                         vertical-align: baseline;
@@ -1623,6 +2558,10 @@
                         margin-top: 32px;
                         margin-left: -7px;
                         margin-right: -7px;
+
+                        @include tb {
+                            display: none;
+                        }
                     }
 
                     .swiper-slide {
@@ -1755,6 +2694,30 @@
                     }
                 }
             }
+        }
+    }
+
+}
+
+.search-dim {
+    opacity: 0;
+    visibility: hidden;
+
+    &.on {
+        @include tb {
+            height: 100vh;
+            width: 100vw;
+            z-index: 3004;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+            background-color: rgba(0, 0, 0, .5);
+            transition: opacity .3s,
+                visibility .3s;
         }
     }
 }

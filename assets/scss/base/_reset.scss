@@ -63,4 +63,12 @@ body {
     font-family: "Hankook",
         "HankookMain",
         sans-serif;
+
+    &.noscroll {
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }
